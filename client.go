@@ -51,6 +51,8 @@ type APIClient struct {
 
 	APIKeyApi *APIKeyApiService
 
+	KeyExchange *KeyExchangeService
+
 	AnnouncementApi *AnnouncementApiService
 
 	ChatApi *ChatApiService

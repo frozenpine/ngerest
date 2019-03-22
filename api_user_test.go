@@ -13,7 +13,7 @@ func TestGetPublicKey(t *testing.T) {
 
 	ctx := context.Background()
 
-	key, rsp, err := client.UserApi.GetPublicKey(ctx)
+	key, rsp, err := client.KeyExchange.GetPublicKey(ctx)
 	if rsp.StatusCode > 300 || err != nil {
 		t.Fatal(err.(GenericSwaggerError).Error(), string(err.(GenericSwaggerError).Body()))
 	}
