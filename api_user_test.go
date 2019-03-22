@@ -25,7 +25,7 @@ func TestGetPublicKey(t *testing.T) {
 		"type":       "account",
 		"verifyCode": "",
 	}
-	auth, rspLogin, err := client.UserApi.UserLogin(ctx, login)
+	auth, rspLogin, err := client.User.UserLogin(ctx, login)
 	if rspLogin.StatusCode > 300 || err != nil {
 		t.Fatal(err.(GenericSwaggerError).Error(), string(err.(GenericSwaggerError).Body()))
 	}
@@ -33,7 +33,7 @@ func TestGetPublicKey(t *testing.T) {
 
 	privateKey := pkcs8.GeneratePriveKey(2048)
 
-	defaultKey, rspKey, err := client.UserApi.UserGetDefaultAPIKey(auth, privateKey)
+	defaultKey, rspKey, err := client.User.UserGetDefaultAPIKey(auth, privateKey)
 	if rspKey.StatusCode > 300 || err != nil {
 		t.Fatal(err.(GenericSwaggerError).Error(), string(err.(GenericSwaggerError).Body()))
 	}

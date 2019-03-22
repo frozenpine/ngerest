@@ -29,13 +29,13 @@ var (
 type APIKeyAPIService service
 
 // APIKeyDisable disable an API Key.
-func (a *APIKeyAPIService) APIKeyDisable(ctx context.Context, apiKeyID string) (ApiKey, *http.Response, error) {
+func (a *APIKeyAPIService) APIKeyDisable(ctx context.Context, apiKeyID string) (APIKeyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue ApiKey
+		localVarReturnValue APIKeyInfo
 	)
 
 	// create path and map variables
@@ -133,7 +133,7 @@ func (a *APIKeyAPIService) APIKeyDisable(ctx context.Context, apiKeyID string) (
 		}
 
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v ApiKey
+			var v APIKeyInfo
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -183,13 +183,13 @@ func (a *APIKeyAPIService) APIKeyDisable(ctx context.Context, apiKeyID string) (
 }
 
 // APIKeyEnable enable an API Key.
-func (a *APIKeyAPIService) APIKeyEnable(ctx context.Context, apiKeyID string) (ApiKey, *http.Response, error) {
+func (a *APIKeyAPIService) APIKeyEnable(ctx context.Context, apiKeyID string) (APIKeyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue ApiKey
+		localVarReturnValue APIKeyInfo
 	)
 
 	// create path and map variables
@@ -287,7 +287,7 @@ func (a *APIKeyAPIService) APIKeyEnable(ctx context.Context, apiKeyID string) (A
 		}
 
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v ApiKey
+			var v APIKeyInfo
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -342,13 +342,13 @@ type APIKeyGetOpts struct {
 }
 
 // APIKeyGet get your API Keys.
-func (a *APIKeyAPIService) APIKeyGet(ctx context.Context, localVarOptionals *APIKeyGetOpts) ([]ApiKey, *http.Response, error) {
+func (a *APIKeyAPIService) APIKeyGet(ctx context.Context, localVarOptionals *APIKeyGetOpts) ([]APIKeyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue []ApiKey
+		localVarReturnValue []APIKeyInfo
 	)
 
 	// create path and map variables
@@ -448,7 +448,7 @@ func (a *APIKeyAPIService) APIKeyGet(ctx context.Context, localVarOptionals *API
 		}
 
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v []ApiKey
+			var v []APIKeyInfo
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -507,13 +507,13 @@ type APIKeyNewOpts struct {
 }
 
 // APIKeyNew create a new API Key.
-func (a *APIKeyAPIService) APIKeyNew(ctx context.Context, localVarOptionals *APIKeyNewOpts) (ApiKey, *http.Response, error) {
+func (a *APIKeyAPIService) APIKeyNew(ctx context.Context, localVarOptionals *APIKeyNewOpts) (APIKeyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue ApiKey
+		localVarReturnValue APIKeyInfo
 	)
 
 	// create path and map variables
@@ -625,7 +625,7 @@ func (a *APIKeyAPIService) APIKeyNew(ctx context.Context, localVarOptionals *API
 		}
 
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v ApiKey
+			var v APIKeyInfo
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

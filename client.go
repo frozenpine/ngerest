@@ -49,45 +49,45 @@ type APIClient struct {
 
 	// API Services
 
-	APIKeyApi *APIKeyAPIService
+	APIKey *APIKeyAPIService
 
 	KeyExchange *KeyExchangeService
 
-	AnnouncementApi *AnnouncementAPIService
+	Announcement *AnnouncementAPIService
 
-	ChatApi *ChatAPIService
+	Chat *ChatAPIService
 
-	ExecutionApi *ExecutionAPIService
+	Execution *ExecutionAPIService
 
-	FundingApi *FundingAPIService
+	Funding *FundingAPIService
 
-	InstrumentApi *InstrumentAPIService
+	Instrument *InstrumentAPIService
 
-	InsuranceApi *InsuranceAPIService
+	Insurance *InsuranceAPIService
 
-	LeaderboardApi *LeaderboardAPIService
+	Leaderboard *LeaderboardAPIService
 
-	LiquidationApi *LiquidationAPIService
+	Liquidation *LiquidationAPIService
 
-	NotificationApi *NotificationAPIService
+	Notification *NotificationAPIService
 
-	OrderApi *OrderAPIService
+	Order *OrderAPIService
 
-	OrderBookApi *OrderBookAPIService
+	OrderBook *OrderBookAPIService
 
-	PositionApi *PositionAPIService
+	Position *PositionAPIService
 
-	QuoteApi *QuoteAPIService
+	Quote *QuoteAPIService
 
-	SchemaApi *SchemaAPIService
+	Schema *SchemaAPIService
 
-	SettlementApi *SettlementAPIService
+	Settlement *SettlementAPIService
 
-	StatsApi *StatsAPIService
+	Stats *StatsAPIService
 
-	TradeApi *TradeAPIService
+	Trade *TradeAPIService
 
-	UserApi *UserAPIService
+	User *UserAPIService
 }
 
 type service struct {
@@ -106,26 +106,26 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.APIKeyApi = (*APIKeyAPIService)(&c.common)
+	c.APIKey = (*APIKeyAPIService)(&c.common)
 	c.KeyExchange = (*KeyExchangeService)(&c.common)
-	c.AnnouncementApi = (*AnnouncementAPIService)(&c.common)
-	c.ChatApi = (*ChatAPIService)(&c.common)
-	c.ExecutionApi = (*ExecutionAPIService)(&c.common)
-	c.FundingApi = (*FundingAPIService)(&c.common)
-	c.InstrumentApi = (*InstrumentAPIService)(&c.common)
-	c.InsuranceApi = (*InsuranceAPIService)(&c.common)
-	c.LeaderboardApi = (*LeaderboardAPIService)(&c.common)
-	c.LiquidationApi = (*LiquidationAPIService)(&c.common)
-	c.NotificationApi = (*NotificationAPIService)(&c.common)
-	c.OrderApi = (*OrderAPIService)(&c.common)
-	c.OrderBookApi = (*OrderBookAPIService)(&c.common)
-	c.PositionApi = (*PositionAPIService)(&c.common)
-	c.QuoteApi = (*QuoteAPIService)(&c.common)
-	c.SchemaApi = (*SchemaAPIService)(&c.common)
-	c.SettlementApi = (*SettlementAPIService)(&c.common)
-	c.StatsApi = (*StatsAPIService)(&c.common)
-	c.TradeApi = (*TradeAPIService)(&c.common)
-	c.UserApi = (*UserAPIService)(&c.common)
+	c.Announcement = (*AnnouncementAPIService)(&c.common)
+	c.Chat = (*ChatAPIService)(&c.common)
+	c.Execution = (*ExecutionAPIService)(&c.common)
+	c.Funding = (*FundingAPIService)(&c.common)
+	c.Instrument = (*InstrumentAPIService)(&c.common)
+	c.Insurance = (*InsuranceAPIService)(&c.common)
+	c.Leaderboard = (*LeaderboardAPIService)(&c.common)
+	c.Liquidation = (*LiquidationAPIService)(&c.common)
+	c.Notification = (*NotificationAPIService)(&c.common)
+	c.Order = (*OrderAPIService)(&c.common)
+	c.OrderBook = (*OrderBookAPIService)(&c.common)
+	c.Position = (*PositionAPIService)(&c.common)
+	c.Quote = (*QuoteAPIService)(&c.common)
+	c.Schema = (*SchemaAPIService)(&c.common)
+	c.Settlement = (*SettlementAPIService)(&c.common)
+	c.Stats = (*StatsAPIService)(&c.common)
+	c.Trade = (*TradeAPIService)(&c.common)
+	c.User = (*UserAPIService)(&c.common)
 
 	return c
 }
@@ -177,7 +177,7 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 
 	// Check the type is as expected.
 	if reflect.TypeOf(obj).String() != expected {
-		return fmt.Errorf("Expected %s to be of type %s but received %s.", name, expected, reflect.TypeOf(obj).String())
+		return fmt.Errorf("expected %s to be of type %s but received %s", name, expected, reflect.TypeOf(obj).String())
 	}
 	return nil
 }
@@ -209,7 +209,7 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 	return c.cfg.HTTPClient.Do(request)
 }
 
-// Change base path to allow switching to mocks
+// ChangeBasePath change base path to allow switching to mocks
 func (c *APIClient) ChangeBasePath(path string) {
 	c.cfg.BasePath = path
 }
@@ -244,7 +244,7 @@ func (c *APIClient) prepareRequest(
 	// add form parameters and file if available.
 	if len(formParams) > 0 || (len(fileBytes) > 0 && fileName != "") {
 		if body != nil {
-			return nil, errors.New("Cannot specify postBody and multipart form at the same time.")
+			return nil, errors.New("cannot specify postBody and multipart form at the same time")
 		}
 		body = &bytes.Buffer{}
 		w := multipart.NewWriter(body)
@@ -441,7 +441,7 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 	}
 
 	if bodyBuf.Len() == 0 {
-		err = fmt.Errorf("Invalid body type %s\n", contentType)
+		err = fmt.Errorf("invalid body type %s", contentType)
 		return nil, err
 	}
 	return bodyBuf, nil
