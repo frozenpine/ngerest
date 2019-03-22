@@ -49,45 +49,45 @@ type APIClient struct {
 
 	// API Services
 
-	APIKeyApi *APIKeyApiService
+	APIKeyApi *APIKeyAPIService
 
 	KeyExchange *KeyExchangeService
 
-	AnnouncementApi *AnnouncementApiService
+	AnnouncementApi *AnnouncementAPIService
 
-	ChatApi *ChatApiService
+	ChatApi *ChatAPIService
 
-	ExecutionApi *ExecutionApiService
+	ExecutionApi *ExecutionAPIService
 
-	FundingApi *FundingApiService
+	FundingApi *FundingAPIService
 
-	InstrumentApi *InstrumentApiService
+	InstrumentApi *InstrumentAPIService
 
-	InsuranceApi *InsuranceApiService
+	InsuranceApi *InsuranceAPIService
 
-	LeaderboardApi *LeaderboardApiService
+	LeaderboardApi *LeaderboardAPIService
 
-	LiquidationApi *LiquidationApiService
+	LiquidationApi *LiquidationAPIService
 
-	NotificationApi *NotificationApiService
+	NotificationApi *NotificationAPIService
 
-	OrderApi *OrderApiService
+	OrderApi *OrderAPIService
 
-	OrderBookApi *OrderBookApiService
+	OrderBookApi *OrderBookAPIService
 
-	PositionApi *PositionApiService
+	PositionApi *PositionAPIService
 
-	QuoteApi *QuoteApiService
+	QuoteApi *QuoteAPIService
 
-	SchemaApi *SchemaApiService
+	SchemaApi *SchemaAPIService
 
-	SettlementApi *SettlementApiService
+	SettlementApi *SettlementAPIService
 
-	StatsApi *StatsApiService
+	StatsApi *StatsAPIService
 
-	TradeApi *TradeApiService
+	TradeApi *TradeAPIService
 
-	UserApi *UserApiService
+	UserApi *UserAPIService
 }
 
 type service struct {
@@ -106,25 +106,26 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.APIKeyApi = (*APIKeyApiService)(&c.common)
-	c.AnnouncementApi = (*AnnouncementApiService)(&c.common)
-	c.ChatApi = (*ChatApiService)(&c.common)
-	c.ExecutionApi = (*ExecutionApiService)(&c.common)
-	c.FundingApi = (*FundingApiService)(&c.common)
-	c.InstrumentApi = (*InstrumentApiService)(&c.common)
-	c.InsuranceApi = (*InsuranceApiService)(&c.common)
-	c.LeaderboardApi = (*LeaderboardApiService)(&c.common)
-	c.LiquidationApi = (*LiquidationApiService)(&c.common)
-	c.NotificationApi = (*NotificationApiService)(&c.common)
-	c.OrderApi = (*OrderApiService)(&c.common)
-	c.OrderBookApi = (*OrderBookApiService)(&c.common)
-	c.PositionApi = (*PositionApiService)(&c.common)
-	c.QuoteApi = (*QuoteApiService)(&c.common)
-	c.SchemaApi = (*SchemaApiService)(&c.common)
-	c.SettlementApi = (*SettlementApiService)(&c.common)
-	c.StatsApi = (*StatsApiService)(&c.common)
-	c.TradeApi = (*TradeApiService)(&c.common)
-	c.UserApi = (*UserApiService)(&c.common)
+	c.APIKeyApi = (*APIKeyAPIService)(&c.common)
+	c.KeyExchange = (*KeyExchangeService)(&c.common)
+	c.AnnouncementApi = (*AnnouncementAPIService)(&c.common)
+	c.ChatApi = (*ChatAPIService)(&c.common)
+	c.ExecutionApi = (*ExecutionAPIService)(&c.common)
+	c.FundingApi = (*FundingAPIService)(&c.common)
+	c.InstrumentApi = (*InstrumentAPIService)(&c.common)
+	c.InsuranceApi = (*InsuranceAPIService)(&c.common)
+	c.LeaderboardApi = (*LeaderboardAPIService)(&c.common)
+	c.LiquidationApi = (*LiquidationAPIService)(&c.common)
+	c.NotificationApi = (*NotificationAPIService)(&c.common)
+	c.OrderApi = (*OrderAPIService)(&c.common)
+	c.OrderBookApi = (*OrderBookAPIService)(&c.common)
+	c.PositionApi = (*PositionAPIService)(&c.common)
+	c.QuoteApi = (*QuoteAPIService)(&c.common)
+	c.SchemaApi = (*SchemaAPIService)(&c.common)
+	c.SettlementApi = (*SettlementAPIService)(&c.common)
+	c.StatsApi = (*StatsAPIService)(&c.common)
+	c.TradeApi = (*TradeAPIService)(&c.common)
+	c.UserApi = (*UserAPIService)(&c.common)
 
 	return c
 }
