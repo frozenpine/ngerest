@@ -123,32 +123,32 @@ func (a *OrderAPIService) OrderAmend(ctx context.Context, localVarOptionals *Ord
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -284,32 +284,32 @@ func (a *OrderAPIService) OrderAmendBulk(ctx context.Context, localVarOptionals 
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -453,32 +453,32 @@ func (a *OrderAPIService) OrderCancel(ctx context.Context, localVarOptionals *Or
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -622,32 +622,32 @@ func (a *OrderAPIService) OrderCancelAll(ctx context.Context, localVarOptionals 
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -776,32 +776,32 @@ func (a *OrderAPIService) OrderCancelAllAfter(ctx context.Context, timeout float
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -938,32 +938,32 @@ func (a *OrderAPIService) OrderClosePosition(ctx context.Context, symbol string,
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1127,32 +1127,32 @@ func (a *OrderAPIService) OrderGetOrders(ctx context.Context, localVarOptionals 
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1554,32 +1554,32 @@ func (a *OrderAPIService) OrderNewBulk(ctx context.Context, localVarOptionals *O
 
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-nonce"] = key
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-nonce"] = key
 
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["api-signature"] = key
+	// 	}
+	// }
+	// if ctx != nil {
+	// 	// API Key Authentication
+	// 	if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+	// 		var key string
+	// 		if auth.Prefix != "" {
+	// 			key = auth.Prefix + " " + auth.Key
+	// 		} else {
+	// 			key = auth.Key
+	// 		}
+	// 		localVarHeaderParams["api-signature"] = key
 
-		}
-	}
+	// 	}
+	// }
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
