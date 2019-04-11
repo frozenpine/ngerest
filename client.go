@@ -386,11 +386,25 @@ func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err err
 func (c *APIClient) generateSignature(secret, method string, url *url.URL, expires int, body *bytes.Buffer) string {
 	h := hmac.New(sha256.New, []byte(secret))
 
-	message := strings.ToUpper(method) + url.Path + strconv.Itoa(expires) + strings.TrimRight(body.String(), "\r\n")
+	path := url.Path
+	if url.RawQuery != "" {
+		path = path + "?" + url.RawQuery
+	}
+
+	var bodyString string
+	if body != nil {
+		bodyString = strings.TrimRight(body.String(), "\r\n")
+	}
+
+	message := strings.ToUpper(method) + path + strconv.Itoa(expires) + bodyString
+
+	// log.Println("message:", message)
 
 	h.Write([]byte(message))
 
 	signature := hex.EncodeToString(h.Sum(nil))
+
+	// log.Println("signature:", signature)
 	return signature
 }
 
