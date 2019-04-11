@@ -10,6 +10,36 @@
 
 package ngerest
 
+import (
+	"bytes"
+	"strconv"
+	"time"
+)
+
 // XAny x any
 type XAny struct {
+}
+
+// JavaTime Java timestamp in million sec
+type JavaTime time.Time
+
+// UnmarshalJSON unmarshal java timestamp
+func (t *JavaTime) UnmarshalJSON(data []byte) error {
+	millis, err := strconv.ParseInt(string(data), 10, 64)
+
+	if err != nil {
+		return err
+	}
+
+	*t = JavaTime(time.Unix(0, millis*int64(time.Millisecond)))
+	return nil
+}
+
+// MarshalJSON marshal Time to java timestamp
+func (t *JavaTime) MarshalJSON() (data []byte, err error) {
+	var buf bytes.Buffer
+
+	buf.WriteString(strconv.FormatInt(time.Time(*t).UnixNano()/int64(time.Millisecond), 10))
+
+	return buf.Bytes(), nil
 }
