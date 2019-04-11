@@ -43,3 +43,20 @@ func (t *JavaTime) MarshalJSON() (data []byte, err error) {
 
 	return buf.Bytes(), nil
 }
+
+// MarshalCSV marshal java time to csv string.
+func (t *JavaTime) MarshalCSV() string {
+	return time.Time(*t).Format("2006-01-02 15:04:05.000 Z0700 MST")
+}
+
+// UnmarshalCSV unmarshal csv string to java time
+func (t *JavaTime) UnmarshalCSV(value string) error {
+	time, err := time.Parse("2006-01-02 15:04:05.000 Z0700 MST", value)
+
+	if err != nil {
+		return err
+	}
+
+	*t = JavaTime(time)
+	return nil
+}
