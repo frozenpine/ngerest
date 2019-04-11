@@ -36,10 +36,10 @@ func (t *JavaTime) UnmarshalJSON(data []byte) error {
 }
 
 // MarshalJSON marshal Time to java timestamp
-func (t *JavaTime) MarshalJSON() (data []byte, err error) {
+func (t JavaTime) MarshalJSON() (data []byte, err error) {
 	var buf bytes.Buffer
 
-	buf.WriteString(strconv.FormatInt(time.Time(*t).UnixNano()/int64(time.Millisecond), 10))
+	buf.WriteString(strconv.FormatInt(time.Time(t).UnixNano()/int64(time.Millisecond), 10))
 
 	return buf.Bytes(), nil
 }
