@@ -40,7 +40,7 @@ type Margin struct {
 	ExcessMarginPcnt   float64   `json:"excessMarginPcnt,omitempty"`
 	AvailableMargin    float32   `json:"availableMargin,omitempty"`
 	WithdrawableMargin float32   `json:"withdrawableMargin,omitempty"`
-	Timestamp          Time `json:"timestamp,omitempty"`
+	Timestamp          NGETime   `json:"timestamp,omitempty"`
 	GrossLastValue     float32   `json:"grossLastValue,omitempty"`
 	Commission         float64   `json:"commission,omitempty"`
 }

@@ -7,17 +7,17 @@ import (
 	"time"
 )
 
-// Time NGE timestamp competibal with UTC time string & timestamp
-type Time struct {
+// NGETime NGE timestamp competibal with UTC time string & timestamp
+type NGETime struct {
 	time.Time
 }
 
-func (t *Time) String() string {
+func (t *NGETime) String() string {
 	return t.Format("2006-01-02 15:04:05.000Z")
 }
 
 // UnmarshalJSON convert time string or timestamp(ms)
-func (t *Time) UnmarshalJSON(data []byte) error {
+func (t *NGETime) UnmarshalJSON(data []byte) error {
 	if data == nil {
 		t.Time = time.Unix(0, 0)
 		return nil
@@ -43,11 +43,10 @@ func (t *Time) UnmarshalJSON(data []byte) error {
 }
 
 // MarshalJSON convert Time structure in json
-func (t *Time) MarshalJSON() ([]byte, error) {
+func (t *NGETime) MarshalJSON() ([]byte, error) {
 	useTimestamp := os.Getenv("USE_TIMESTAMP")
 
-	useTimestamp = strings.Trim(
-		strings.Trim(useTimestamp, "\""), "")
+	useTimestamp = strings.Trim(useTimestamp, " \"")
 
 	switch useTimestamp {
 	case "1":

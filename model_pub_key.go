@@ -9,6 +9,6 @@ import (
 type HostPublicKey struct {
 	KeyString string
 	PublicKey *rsa.PublicKey
-	Created   Time
+	Created   NGETime
 	Expired   time.Duration
 }

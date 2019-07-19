@@ -6,11 +6,11 @@ type Instrument struct {
 	RootSymbol                     string  `json:"rootSymbol,omitempty"`
 	State                          string  `json:"state,omitempty"`
 	Typ                            string  `json:"typ,omitempty"`
-	Listing                        Time    `json:"listing,omitempty"`
-	Front                          Time    `json:"front,omitempty"`
-	Expiry                         Time    `json:"expiry,omitempty"`
-	Settle                         Time    `json:"settle,omitempty"`
-	RelistInterval                 Time    `json:"relistInterval,omitempty"`
+	Listing                        NGETime    `json:"listing,omitempty"`
+	Front                          NGETime    `json:"front,omitempty"`
+	Expiry                         NGETime    `json:"expiry,omitempty"`
+	Settle                         NGETime    `json:"settle,omitempty"`
+	RelistInterval                 NGETime    `json:"relistInterval,omitempty"`
 	InverseLeg                     string  `json:"inverseLeg,omitempty"`
 	SellLeg                        string  `json:"sellLeg,omitempty"`
 	BuyLeg                         string  `json:"buyLeg,omitempty"`
@@ -24,9 +24,9 @@ type Instrument struct {
 	UnderlyingSymbol               string  `json:"underlyingSymbol,omitempty"`
 	Reference                      string  `json:"reference,omitempty"`
 	ReferenceSymbol                string  `json:"referenceSymbol,omitempty"`
-	CalcInterval                   Time    `json:"calcInterval,omitempty"`
-	PublishInterval                Time    `json:"publishInterval,omitempty"`
-	PublishTime                    Time    `json:"publishTime,omitempty"`
+	CalcInterval                   NGETime    `json:"calcInterval,omitempty"`
+	PublishInterval                NGETime    `json:"publishInterval,omitempty"`
+	PublishTime                    NGETime    `json:"publishTime,omitempty"`
 	MaxOrderQty                    float32 `json:"maxOrderQty,omitempty"`
 	MaxPrice                       float64 `json:"maxPrice,omitempty"`
 	LotSize                        float32 `json:"lotSize,omitempty"`
@@ -53,15 +53,15 @@ type Instrument struct {
 	FundingBaseSymbol              string  `json:"fundingBaseSymbol,omitempty"`
 	FundingQuoteSymbol             string  `json:"fundingQuoteSymbol,omitempty"`
 	FundingPremiumSymbol           string  `json:"fundingPremiumSymbol,omitempty"`
-	FundingTimestamp               Time    `json:"fundingTimestamp,omitempty"`
-	FundingInterval                Time    `json:"fundingInterval,omitempty"`
+	FundingTimestamp               NGETime    `json:"fundingTimestamp,omitempty"`
+	FundingInterval                NGETime    `json:"fundingInterval,omitempty"`
 	FundingRate                    float64 `json:"fundingRate,omitempty"`
 	IndicativeFundingRate          float64 `json:"indicativeFundingRate,omitempty"`
-	RebalanceTimestamp             Time    `json:"rebalanceTimestamp,omitempty"`
-	RebalanceInterval              Time    `json:"rebalanceInterval,omitempty"`
-	OpeningTimestamp               Time    `json:"openingTimestamp,omitempty"`
-	ClosingTimestamp               Time    `json:"closingTimestamp,omitempty"`
-	SessionInterval                Time    `json:"sessionInterval,omitempty"`
+	RebalanceTimestamp             NGETime    `json:"rebalanceTimestamp,omitempty"`
+	RebalanceInterval              NGETime    `json:"rebalanceInterval,omitempty"`
+	OpeningTimestamp               NGETime    `json:"openingTimestamp,omitempty"`
+	ClosingTimestamp               NGETime    `json:"closingTimestamp,omitempty"`
+	SessionInterval                NGETime    `json:"sessionInterval,omitempty"`
 	PrevClosePrice                 float64 `json:"prevClosePrice,omitempty"`
 	LimitDownPrice                 float64 `json:"limitDownPrice,omitempty"`
 	LimitUpPrice                   float64 `json:"limitUpPrice,omitempty"`
@@ -102,7 +102,7 @@ type Instrument struct {
 	IndicativeSettlePrice          float64 `json:"indicativeSettlePrice,omitempty"`
 	OptionUnderlyingPrice          float64 `json:"optionUnderlyingPrice,omitempty"`
 	SettledPrice                   float64 `json:"settledPrice,omitempty"`
-	Timestamp                      Time    `json:"timestamp,omitempty"`
+	Timestamp                      NGETime    `json:"timestamp,omitempty"`
 	BestPrice                      float64 `json:"bestPrice,omitempty"`
 	ForeignNotional24H             float64 `json:"foreignNotional24h,omitempty"`
 	HomeNotional24H                float64 `json:"homeNotional24h,omitempty"`
