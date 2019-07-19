@@ -10,6 +10,9 @@ import (
 func TestTimeMarshalJSON(t *testing.T) {
 	tm := NGETime{Time: time.Now()}
 
+	loc, _ := time.LoadLocation("UTC")
+	tm.In(loc)
+
 	data, err := tm.MarshalJSON()
 	if err != nil {
 		t.Error(err)
