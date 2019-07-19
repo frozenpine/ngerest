@@ -54,6 +54,6 @@ func (t *NGETime) MarshalJSON() ([]byte, error) {
 		data := []byte(strconv.Itoa(ms))
 		return data, nil
 	default:
-		return []byte(t.String()), nil
+		return []byte("\"" + t.String() + "\""), nil
 	}
 }
