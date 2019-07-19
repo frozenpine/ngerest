@@ -65,8 +65,8 @@ type Instrument struct {
 	PrevClosePrice                 float64 `json:"prevClosePrice,omitempty"`
 	LimitDownPrice                 float64 `json:"limitDownPrice,omitempty"`
 	LimitUpPrice                   float64 `json:"limitUpPrice,omitempty"`
-	BankruptLimitDownPrice         float64 `json:"bankruptLimitDownPrice,omitempty"`
-	BankruptLimitUpPrice           float64 `json:"bankruptLimitUpPrice,omitempty"`
+	// BankruptLimitDownPrice         float64 `json:"bankruptLimitDownPrice,omitempty"`
+	// BankruptLimitUpPrice           float64 `json:"bankruptLimitUpPrice,omitempty"`
 	PrevTotalVolume                float32 `json:"prevTotalVolume,omitempty"`
 	TotalVolume                    float32 `json:"totalVolume,omitempty"`
 	Volume                         float32 `json:"volume,omitempty"`
