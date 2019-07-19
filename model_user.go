@@ -13,8 +13,8 @@ type User struct {
 	Username     string           `json:"username"`
 	Email        string           `json:"email"`
 	Phone        string           `json:"phone,omitempty"`
-	Created      time.Time        `json:"created,omitempty"`
-	LastUpdated  time.Time        `json:"lastUpdated,omitempty"`
+	Created      Time        `json:"created,omitempty"`
+	LastUpdated  Time        `json:"lastUpdated,omitempty"`
 	Preferences  *UserPreferences `json:"preferences,omitempty"`
 	TFAEnabled   string           `json:"TFAEnabled,omitempty"`
 	AffiliateID  string           `json:"affiliateID,omitempty"`

@@ -6,7 +6,7 @@ import (
 
 // TradeBin trade bin
 type TradeBin struct {
-	Timestamp       time.Time `json:"timestamp"`
+	Timestamp       Time `json:"timestamp"`
 	Symbol          string    `json:"symbol"`
 	Open            float64   `json:"open,omitempty"`
 	High            float64   `json:"high,omitempty"`

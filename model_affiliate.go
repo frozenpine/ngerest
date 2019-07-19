@@ -11,7 +11,7 @@ type Affiliate struct {
 	PrevPayout      float32   `json:"prevPayout,omitempty"`
 	PrevTurnover    float32   `json:"prevTurnover,omitempty"`
 	PrevComm        float32   `json:"prevComm,omitempty"`
-	PrevTimestamp   time.Time `json:"prevTimestamp,omitempty"`
+	PrevTimestamp   Time `json:"prevTimestamp,omitempty"`
 	ExecTurnover    float32   `json:"execTurnover,omitempty"`
 	ExecComm        float32   `json:"execComm,omitempty"`
 	TotalReferrals  float32   `json:"totalReferrals,omitempty"`
@@ -19,6 +19,6 @@ type Affiliate struct {
 	TotalComm       float32   `json:"totalComm,omitempty"`
 	PayoutPcnt      float64   `json:"payoutPcnt,omitempty"`
 	PendingPayout   float32   `json:"pendingPayout,omitempty"`
-	Timestamp       time.Time `json:"timestamp,omitempty"`
+	Timestamp       Time `json:"timestamp,omitempty"`
 	ReferrerAccount float64   `json:"referrerAccount,omitempty"`
 }

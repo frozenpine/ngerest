@@ -13,7 +13,7 @@ type Wallet struct {
 	PrevTransferIn   float32   `json:"prevTransferIn,omitempty"`
 	PrevTransferOut  float32   `json:"prevTransferOut,omitempty"`
 	PrevAmount       float32   `json:"prevAmount,omitempty"`
-	PrevTimestamp    time.Time `json:"prevTimestamp,omitempty"`
+	PrevTimestamp    Time `json:"prevTimestamp,omitempty"`
 	DeltaDeposited   float32   `json:"deltaDeposited,omitempty"`
 	DeltaWithdrawn   float32   `json:"deltaWithdrawn,omitempty"`
 	DeltaTransferIn  float32   `json:"deltaTransferIn,omitempty"`
@@ -27,7 +27,7 @@ type Wallet struct {
 	PendingCredit    float32   `json:"pendingCredit,omitempty"`
 	PendingDebit     float32   `json:"pendingDebit,omitempty"`
 	ConfirmedDebit   float32   `json:"confirmedDebit,omitempty"`
-	Timestamp        time.Time `json:"timestamp,omitempty"`
+	Timestamp        Time `json:"timestamp,omitempty"`
 	Addr             string    `json:"addr,omitempty"`
 	Script           string    `json:"script,omitempty"`
 	WithdrawalLock   []string  `json:"withdrawalLock,omitempty"`

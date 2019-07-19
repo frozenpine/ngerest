@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Margin margin
 type Margin struct {
 	Account            float32   `json:"account"`
@@ -44,7 +40,7 @@ type Margin struct {
 	ExcessMarginPcnt   float64   `json:"excessMarginPcnt,omitempty"`
 	AvailableMargin    float32   `json:"availableMargin,omitempty"`
 	WithdrawableMargin float32   `json:"withdrawableMargin,omitempty"`
-	Timestamp          time.Time `json:"timestamp,omitempty"`
+	Timestamp          Time `json:"timestamp,omitempty"`
 	GrossLastValue     float32   `json:"grossLastValue,omitempty"`
 	Commission         float64   `json:"commission,omitempty"`
 }

@@ -22,7 +22,7 @@ type Position struct {
 	PrevRealisedPnl      float32   `json:"prevRealisedPnl,omitempty"`
 	PrevUnrealisedPnl    float32   `json:"prevUnrealisedPnl,omitempty"`
 	PrevClosePrice       float64   `json:"prevClosePrice,omitempty"`
-	OpeningTimestamp     time.Time `json:"openingTimestamp,omitempty"`
+	OpeningTimestamp     Time `json:"openingTimestamp,omitempty"`
 	OpeningQty           float32   `json:"openingQty,omitempty"`
 	OpeningCost          float32   `json:"openingCost,omitempty"`
 	OpeningComm          float32   `json:"openingComm,omitempty"`
@@ -39,7 +39,7 @@ type Position struct {
 	ExecQty              float32   `json:"execQty,omitempty"`
 	ExecCost             float32   `json:"execCost,omitempty"`
 	ExecComm             float32   `json:"execComm,omitempty"`
-	CurrentTimestamp     time.Time `json:"currentTimestamp,omitempty"`
+	CurrentTimestamp     Time `json:"currentTimestamp,omitempty"`
 	CurrentQty           float32   `json:"currentQty,omitempty"`
 	CurrentCost          float32   `json:"currentCost,omitempty"`
 	CurrentComm          float32   `json:"currentComm,omitempty"`
@@ -94,7 +94,7 @@ type Position struct {
 	MarginCallPrice      float64   `json:"marginCallPrice,omitempty"`
 	LiquidationPrice     float64   `json:"liquidationPrice,omitempty"`
 	BankruptPrice        float64   `json:"bankruptPrice,omitempty"`
-	Timestamp            time.Time `json:"timestamp,omitempty"`
+	Timestamp            Time `json:"timestamp,omitempty"`
 	LastPrice            float64   `json:"lastPrice,omitempty"`
 	LastValue            float32   `json:"lastValue,omitempty"`
 }

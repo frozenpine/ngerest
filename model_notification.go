@@ -7,7 +7,7 @@ import (
 // Notification Account Notifications
 type Notification struct {
 	ID                float32   `json:"id,omitempty"`
-	Date              time.Time `json:"date"`
+	Date              Time `json:"date"`
 	Title             string    `json:"title"`
 	Body              string    `json:"body"`
 	TTL               float32   `json:"ttl"`

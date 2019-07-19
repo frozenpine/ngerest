@@ -6,7 +6,7 @@ import (
 
 // StatsHistory history states
 type StatsHistory struct {
-	Date       time.Time `json:"date"`
+	Date       Time `json:"date"`
 	RootSymbol string    `json:"rootSymbol"`
 	Currency   string    `json:"currency,omitempty"`
 	Volume     float32   `json:"volume,omitempty"`

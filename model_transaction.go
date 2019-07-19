@@ -16,6 +16,6 @@ type Transaction struct {
 	Address        string    `json:"address,omitempty"`
 	Tx             string    `json:"tx,omitempty"`
 	Text           string    `json:"text,omitempty"`
-	TransactTime   time.Time `json:"transactTime,omitempty"`
-	Timestamp      time.Time `json:"timestamp,omitempty"`
+	TransactTime   Time `json:"transactTime,omitempty"`
+	Timestamp      Time `json:"timestamp,omitempty"`
 }

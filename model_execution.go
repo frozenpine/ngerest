@@ -51,6 +51,6 @@ type Execution struct {
 	ExecComm              float32   `json:"execComm,omitempty"`
 	HomeNotional          float64   `json:"homeNotional,omitempty"`
 	ForeignNotional       float64   `json:"foreignNotional,omitempty"`
-	TransactTime          time.Time `json:"transactTime,omitempty"`
-	Timestamp             time.Time `json:"timestamp,omitempty"`
+	TransactTime          Time `json:"transactTime,omitempty"`
+	Timestamp             Time `json:"timestamp,omitempty"`
 }

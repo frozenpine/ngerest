@@ -14,5 +14,5 @@ type APIKeyInfo struct {
 	Permissions []XAny    `json:"permissions,omitempty"`
 	Enabled     bool      `json:"enabled,omitempty"`
 	UserID      float32   `json:"userId"`
-	Created     time.Time `json:"created,omitempty"`
+	Created     Time `json:"created,omitempty"`
 }

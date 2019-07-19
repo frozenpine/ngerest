@@ -6,9 +6,9 @@ import (
 
 // Funding Swap Funding History
 type Funding struct {
-	Timestamp        time.Time `json:"timestamp"`
+	Timestamp        Time `json:"timestamp"`
 	Symbol           string    `json:"symbol"`
-	FundingInterval  time.Time `json:"fundingInterval,omitempty"`
+	FundingInterval  Time `json:"fundingInterval,omitempty"`
 	FundingRate      float64   `json:"fundingRate,omitempty"`
 	FundingRateDaily float64   `json:"fundingRateDaily,omitempty"`
 }

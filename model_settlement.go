@@ -6,7 +6,7 @@ import (
 
 // Settlement Historical Settlement Data
 type Settlement struct {
-	Timestamp             time.Time `json:"timestamp"`
+	Timestamp             Time `json:"timestamp"`
 	Symbol                string    `json:"symbol"`
 	SettlementType        string    `json:"settlementType,omitempty"`
 	SettledPrice          float64   `json:"settledPrice,omitempty"`
