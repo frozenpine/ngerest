@@ -1,7 +1,7 @@
 package ngerest
 
 import (
-	"encoding/json"
+	// "encoding/json"
 	"os"
 	"testing"
 	"time"
@@ -10,14 +10,20 @@ import (
 func TestTimeMarshalJSON(t *testing.T) {
 	tm := NGETime{Time: time.Now()}
 
-	data, err := json.Marshal(tm)
+	data, err := tm.MarshalJSON()
+	if err != nil {
+		t.Error(err)
+	} else {
+		t.Log(string(data))
+		t.Log(tm.String())
+	}
+
+	os.Setenv("USE_TIMESTAMP", "TRUE")
+
+	data, err = tm.MarshalJSON()
 	if err != nil {
 		t.Error(err)
 	} else {
 		t.Log(string(data))
 	}
-
-	os.Setenv("USE_TIMESTAMP", "TRUE")
-
-	data, err = json.Marshal(tm)
 }

@@ -49,17 +49,11 @@ func (t *NGETime) MarshalJSON() ([]byte, error) {
 	useTimestamp = strings.Trim(useTimestamp, " \"")
 
 	switch useTimestamp {
-	case "1":
-		fallthrough
-	case "true":
-		fallthrough
-	case "TRUE":
-		fallthrough
-	case "True":
+	case "1", "y", "Y", "t", "T", "yes", "Yes", "YES", "true", "True", "TRUE":
 		ms := int(t.UnixNano() / 1000)
 		data := []byte(strconv.Itoa(ms))
 		return data, nil
 	default:
-		return []byte(t.Format("2006-01-02 15:04:05.000Z")), nil
+		return []byte(t.String()), nil
 	}
 }
