@@ -1,6 +1,7 @@
 package ngerest
 
 import (
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -43,9 +44,23 @@ func (t *Time) UnmarshalJSON(data []byte) error {
 
 // MarshalJSON convert Time structure in json
 func (t *Time) MarshalJSON() ([]byte, error) {
-	ms := int(t.UnixNano() / 1000)
+	useTimestamp := os.Getenv("USE_TIMESTAMP")
 
-	data := []byte(strconv.Itoa(ms))
+	useTimestamp = strings.Trim(
+		strings.Trim(useTimestamp, "\""), "")
 
-	return data, nil
+	switch useTimestamp {
+	case "1":
+		fallthrough
+	case "true":
+		fallthrough
+	case "TRUE":
+		fallthrough
+	case "True":
+		ms := int(t.UnixNano() / 1000)
+		data := []byte(strconv.Itoa(ms))
+		return data, nil
+	default:
+		return []byte(t.Format("2006-01-02 15:04:05.000Z")), nil
+	}
 }
