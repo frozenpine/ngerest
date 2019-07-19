@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // TradeBin trade bin
 type TradeBin struct {
 	Timestamp       Time `json:"timestamp"`

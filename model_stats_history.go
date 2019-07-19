@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // StatsHistory history states
 type StatsHistory struct {
 	Date       Time `json:"date"`

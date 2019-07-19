@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Wallet wallet
 type Wallet struct {
 	Account          float32   `json:"account"`

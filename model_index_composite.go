@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // IndexComposite index composite
 type IndexComposite struct {
 	Timestamp   Time `json:"timestamp"`

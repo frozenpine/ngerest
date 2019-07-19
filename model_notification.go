@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Notification Account Notifications
 type Notification struct {
 	ID                float32   `json:"id,omitempty"`

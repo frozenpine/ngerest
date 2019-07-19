@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // User Account Operations
 type User struct {
 	ID           float32          `json:"id,omitempty"`

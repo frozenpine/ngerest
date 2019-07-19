@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Funding Swap Funding History
 type Funding struct {
 	Timestamp        Time `json:"timestamp"`

@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Trade Individual & Bucketed Trades
 type Trade struct {
 	Timestamp       Time `json:"timestamp"`

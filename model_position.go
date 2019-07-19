@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Position Summary of Open and Closed Positions
 type Position struct {
 	Account              float32   `json:"account"`

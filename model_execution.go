@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Execution Raw Order and Balance Data
 type Execution struct {
 	ExecID                string    `json:"execID"`

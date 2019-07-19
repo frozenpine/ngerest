@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Transaction transaction
 type Transaction struct {
 	TransactID     string    `json:"transactID"`

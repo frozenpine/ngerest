@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // APIKeyInfo persistent API Keys for Developers
 type APIKeyInfo struct {
 	ID          string    `json:"id"`

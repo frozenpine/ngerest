@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Announcement public Announcements
 type Announcement struct {
 	ID      float32   `json:"id"`

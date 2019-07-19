@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // AccessToken access token for auth
 type AccessToken struct {
 	ID      string    `json:"id"`

@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // UserPreferences user preferences
 type UserPreferences struct {
 	AlertOnLiquidations     bool         `json:"alertOnLiquidations,omitempty"`

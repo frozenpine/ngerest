@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Quote Best Bid/Offer Snapshots & Historical Bins
 type Quote struct {
 	Timestamp Time `json:"timestamp"`

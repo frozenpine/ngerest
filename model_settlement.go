@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Settlement Historical Settlement Data
 type Settlement struct {
 	Timestamp             Time `json:"timestamp"`

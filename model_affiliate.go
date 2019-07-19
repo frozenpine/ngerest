@@ -1,9 +1,5 @@
 package ngerest
 
-import (
-	"time"
-)
-
 // Affiliate affiliate
 type Affiliate struct {
 	Account         float32   `json:"account"`
