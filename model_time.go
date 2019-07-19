@@ -28,7 +28,12 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 
 	if strings.HasPrefix(dataStr, "\"") && strings.HasSuffix(dataStr, "\"") {
 		dataStr = strings.Trim(dataStr, "\" ")
-		
+
+		if dataStr == "" {
+			t.Time = time.Unix(0, 0)
+			return nil
+		}
+
 		t.Time, err = time.ParseInLocation(
 			"2006-01-02 15:04:05.000Z", dataStr, time.UTC)
 
