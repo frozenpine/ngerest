@@ -69,7 +69,7 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 
 	if strings.Contains(dataStr, "T") {
 		t.Time, err = time.ParseInLocation(
-			"2006-01-02T15:04:05.000Z", dataStr, time.UTC)
+			"2006-01-02T15:04:05:000Z", dataStr, time.UTC)
 	} else {
 		t.Time, err = time.ParseInLocation(
 			"2006-01-02 15:04:05.000Z", dataStr, time.UTC)
