@@ -1,7 +1,6 @@
 package ngerest
 
 import (
-	"github.com/prometheus/prometheus/pkg/value"
 	"strconv"
 	"strings"
 )
