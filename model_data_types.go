@@ -69,12 +69,15 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 	}
 
 	if timeStringPattern.MatchString(dataStr) {
-		t.Time, err = time.ParseInLocation(
-			"2006-01-02 15:04:05:000Z", dataStr, time.UTC)
-	} else {
-		t.Time, err = time.ParseInLocation(
-			"2006-01-02 15:04:05.000Z", dataStr, time.UTC)
+		seps := strings.Split(dataStr, ":")
+
+		head := strings.Join(seps[:3], ":")
+
+		dataStr = head + "." + seps[3]
 	}
+
+	t.Time, err = time.ParseInLocation(
+		"2006-01-02 15:04:05.000Z", dataStr, time.UTC)
 
 	return err
 }
