@@ -29,7 +29,7 @@ func (f *StringFloat) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-var timestampPattern = regexp.MustCompile("[0-9]+")
+var timestampPattern = regexp.MustCompile("^[0-9]+$")
 
 // NGETime NGE timestamp competibal with UTC time string & timestamp
 type NGETime struct {
