@@ -1,10 +1,17 @@
 package ngerest
 
 import (
+	"bytes"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
+)
+
+var (
+	nullBytes         = []byte("null")
+	timestampPattern  = regexp.MustCompile("^[0-9]+$")
+	timeStringPattern = regexp.MustCompile("([0-9]{2}:){3}[0-9]{3}Z$")
 )
 
 // StringFloat json string format float64
@@ -12,6 +19,11 @@ type StringFloat float64
 
 // UnmarshalJSON unmarshal float from json
 func (f *StringFloat) UnmarshalJSON(data []byte) error {
+	if data == nil || bytes.Contains(data, nullBytes) {
+		*f = 0
+		return nil
+	}
+
 	dataStr := string(data)
 	dataStr = strings.Trim(dataStr, "\" ")
 
@@ -29,9 +41,6 @@ func (f *StringFloat) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-var timestampPattern = regexp.MustCompile("^[0-9]+$")
-var timeStringPattern = regexp.MustCompile("([0-9]{2}:){3}[0-9]{3}Z$")
-
 // NGETime NGE timestamp competibal with UTC time string & timestamp
 type NGETime struct {
 	time.Time
@@ -39,7 +48,7 @@ type NGETime struct {
 
 // UnmarshalJSON convert time string or timestamp(ms)
 func (t *NGETime) UnmarshalJSON(data []byte) error {
-	if data == nil {
+	if data == nil || bytes.Contains(data, nullBytes) {
 		t.Time = time.Unix(0, 0)
 		return nil
 	}
