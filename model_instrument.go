@@ -1,32 +1,5 @@
 package ngerest
 
-import (
-	"strconv"
-	"strings"
-)
-
-// StringFloat json string format float64
-type StringFloat float64
-
-// UnmarshalJSON unmarshal float from json
-func (f *StringFloat) UnmarshalJSON(data []byte) error {
-	dataStr := string(data)
-	dataStr = strings.Trim(dataStr, "\" ")
-
-	if dataStr == "" {
-		*f = 0
-		return nil
-	}
-
-	value, err := strconv.ParseFloat(dataStr, 64)
-	if err != nil {
-		return err
-	}
-
-	*f = StringFloat(value)
-	return nil
-}
-
 // Instrument Tradeable Contracts, Indices, and History
 type Instrument struct {
 	Symbol                         string      `json:"symbol"`

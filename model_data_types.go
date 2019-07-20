@@ -7,6 +7,28 @@ import (
 	"time"
 )
 
+// StringFloat json string format float64
+type StringFloat float64
+
+// UnmarshalJSON unmarshal float from json
+func (f *StringFloat) UnmarshalJSON(data []byte) error {
+	dataStr := string(data)
+	dataStr = strings.Trim(dataStr, "\" ")
+
+	if dataStr == "" {
+		*f = 0
+		return nil
+	}
+
+	value, err := strconv.ParseFloat(dataStr, 64)
+	if err != nil {
+		return err
+	}
+
+	*f = StringFloat(value)
+	return nil
+}
+
 var timestampPattern = regexp.MustCompile("[0-9]+")
 
 // NGETime NGE timestamp competibal with UTC time string & timestamp
