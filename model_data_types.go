@@ -79,5 +79,7 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 	t.Time, err = time.ParseInLocation(
 		"2006-01-02 15:04:05.000Z", dataStr, time.UTC)
 
+	t.Time = t.In(time.Local)
+
 	return err
 }
