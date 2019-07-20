@@ -19,11 +19,11 @@ func (f *StringFloat) UnmarshalJSON(data []byte) error {
 	}
 
 	value, err := strconv.ParseFloat(dataStr, 64)
-	if err == nil {
+	if err != nil {
 		return err
 	}
 
-	*f = value
+	*f = StringFloat(value)
 	return nil
 }
 
