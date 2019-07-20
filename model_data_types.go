@@ -30,6 +30,7 @@ func (f *StringFloat) UnmarshalJSON(data []byte) error {
 }
 
 var timestampPattern = regexp.MustCompile("^[0-9]+$")
+var timeStringPattern = regexp.MustCompile("([0-9]{2}:){3}[0-9]{3}Z$")
 
 // NGETime NGE timestamp competibal with UTC time string & timestamp
 type NGETime struct {
@@ -67,9 +68,9 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	if strings.Contains(dataStr, "T") {
+	if timeStringPattern.MatchString(dataStr) {
 		t.Time, err = time.ParseInLocation(
-			"2006-01-02T15:04:05:000Z", dataStr, time.UTC)
+			"2006-01-02 15:04:05:000Z", dataStr, time.UTC)
 	} else {
 		t.Time, err = time.ParseInLocation(
 			"2006-01-02 15:04:05.000Z", dataStr, time.UTC)
