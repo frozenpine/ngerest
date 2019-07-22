@@ -9,9 +9,9 @@ import (
 )
 
 var (
-	nullBytes         = []byte("null")
-	timestampPattern  = regexp.MustCompile("^[0-9]+$")
-	timeStringPattern = regexp.MustCompile("([0-9]{2}:){3}[0-9]{3}Z$")
+	nullBytes            = []byte("null")
+	timestampPattern     = regexp.MustCompile("^[0-9]+$")
+	marvelousTimePattern = regexp.MustCompile("([0-9]{1,2}:){3}[0-9]{3}Z$")
 )
 
 // StringFloat json string format float64
@@ -46,6 +46,13 @@ type NGETime struct {
 	time.Time
 }
 
+// FromTimestamp convert from timestamp(ms)
+func (t *NGETime) FromTimestamp(timestamp int64) {
+	sec := int64(timestamp / 1000)
+	nsec := (int64(timestamp) - sec*1000) * 1000
+	t.Time = time.Unix(sec, nsec)
+}
+
 // UnmarshalJSON convert time string or timestamp(ms)
 func (t *NGETime) UnmarshalJSON(data []byte) error {
 	if data == nil || bytes.Contains(data, nullBytes) {
@@ -56,44 +63,37 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 	dataStr := string(data)
 	dataStr = strings.Trim(dataStr, "\" ")
 
+	if dataStr == "" || dataStr == "null" {
+		t.Time = time.Unix(0, 0)
+		return nil
+	}
+
 	var err error
 
 	if timestampPattern.MatchString(dataStr) {
-		timestamp, err := strconv.Atoi(dataStr)
+		timestamp, err := strconv.ParseInt(dataStr, 10, 64)
 
 		if err != nil {
 			return err
 		}
 
-		sec := int64(timestamp / 1000)
-		nsec := (int64(timestamp) - sec*1000) * 1000
-		t.Time = time.Unix(sec, nsec)
+		t.FromTimestamp(timestamp)
 
 		return nil
 	}
 
-	if dataStr == "" {
-		t.Time = time.Unix(0, 0)
-		return nil
+	if marvelousTimePattern.MatchString(dataStr) {
+		secs := strings.Split(dataStr, ":")
+
+		timeStr := strings.Join(secs[:3], ":") + "." + secs[3]
+
+		t.Time, err = time.Parse("2006-01-02 15:04:05.000Z", timeStr)
+	} else {
+		t.Time, err = time.ParseInLocation(
+			"2006-01-02T15:04:05.000Z", dataStr, time.UTC)
+
+		t.Time = t.In(time.Local)
 	}
-
-	if timeStringPattern.MatchString(dataStr) {
-		dateTimes := strings.Split(dataStr, " ")
-
-		times := strings.Split(dateTimes[len(dateTimes)-1], ":")
-		timeStr := strings.Join(times[:3], ":") + "." + times[3]
-
-		if strings.Contains(dataStr, "T") {
-			dataStr = timeStr
-		} else {
-			dataStr = dateTimes[0] + "T" + timeStr
-		}
-	}
-
-	t.Time, err = time.ParseInLocation(
-		"2006-01-02T15:04:05.000Z", dataStr, time.UTC)
-
-	t.Time = t.In(time.Local)
 
 	return err
 }
