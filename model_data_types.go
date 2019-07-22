@@ -87,13 +87,14 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 
 		timeStr := strings.Join(secs[:3], ":") + "." + secs[3]
 
-		t.Time, err = time.Parse("2006-01-02 15:04:05.000Z", timeStr)
+		t.Time, err = time.ParseInLocation(
+			"2006-01-02 15:04:05.000Z", timeStr, time.Local)
 	} else {
 		t.Time, err = time.ParseInLocation(
 			"2006-01-02T15:04:05.000Z", dataStr, time.UTC)
-
-		t.Time = t.In(time.Local)
 	}
+
+	t.Time = t.In(time.Local)
 
 	return err
 }
