@@ -1,16 +1,16 @@
 package ngerest
 
 import (
+	"encoding/json"
 	"testing"
 	"time"
 )
 
 func TestNGETime(t *testing.T) {
-	tm := NGETime{
-		Time: time.Now().UTC(),
-	}
+	tm := NGETime(time.Now().UTC())
+	t.Log(tm.String())
 
-	result, _ := tm.MarshalJSON()
+	result, _ := json.Marshal(&tm)
 
 	t.Log(string(result))
 }
