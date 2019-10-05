@@ -57,14 +57,14 @@ func (t *NGETime) String() string {
 	return t.Format("2006-01-02T15:04:05.000Z")
 }
 
-// // MarshalJSON marshal for json format
-// func (t *NGETime) MarshalJSON() ([]byte, error) {
-// 	buff := bytes.Buffer{}
+// MarshalJSON marshal for json format
+func (t *NGETime) MarshalJSON() ([]byte, error) {
+	buff := bytes.Buffer{}
 
-// 	buff.WriteString(t.String())
+	buff.WriteString(`"` + t.String() + `"`)
 
-// 	return buff.Bytes(), nil
-// }
+	return buff.Bytes(), nil
+}
 
 // UnmarshalJSON convert time string or timestamp(ms)
 func (t *NGETime) UnmarshalJSON(data []byte) error {
