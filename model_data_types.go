@@ -53,6 +53,19 @@ func (t *NGETime) FromTimestamp(timestamp int64) {
 	t.Time = time.Unix(sec, nsec)
 }
 
+func (t *NGETime) String() string {
+	return t.Format("2006-01-02T15:04:05.000Z")
+}
+
+// // MarshalJSON marshal for json format
+// func (t *NGETime) MarshalJSON() ([]byte, error) {
+// 	buff := bytes.Buffer{}
+
+// 	buff.WriteString(t.String())
+
+// 	return buff.Bytes(), nil
+// }
+
 // UnmarshalJSON convert time string or timestamp(ms)
 func (t *NGETime) UnmarshalJSON(data []byte) error {
 	if data == nil || bytes.Contains(data, nullBytes) {
