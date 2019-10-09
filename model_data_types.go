@@ -49,7 +49,7 @@ func (t *NGETime) FromTimestamp(timestamp int64) {
 	sec := int64(timestamp / 1000)
 	nsec := (int64(timestamp) - sec*1000) * 1000
 	tm := time.Unix(sec, nsec)
-	*t = NGETime(tm.In(time.Local))
+	*t = NGETime(tm)
 }
 
 func (t *NGETime) String() string {
@@ -109,7 +109,7 @@ func (t *NGETime) UnmarshalJSON(data []byte) error {
 			"2006-01-02T15:04:05.000Z", dataStr, time.UTC)
 	}
 
-	*t = NGETime(tm.In(time.Local))
+	*t = NGETime(tm)
 
 	return err
 }
