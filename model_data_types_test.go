@@ -8,7 +8,7 @@ import (
 
 func TestNGETime(t *testing.T) {
 	tm := NGETime(time.Now().UTC())
-	t.Log(tm.String())
+	// t.Log(tm.String())
 
 	result, _ := json.Marshal(tm)
 
