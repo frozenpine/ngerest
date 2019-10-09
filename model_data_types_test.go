@@ -8,9 +8,11 @@ import (
 
 func TestNGETime(t *testing.T) {
 	tm := NGETime(time.Now().UTC())
-	// t.Log(tm.String())
-
 	result, _ := json.Marshal(tm)
+	t.Log(string(result))
+
+	tm.FromTimestamp(1570639648629)
+	result, _ = json.Marshal(tm)
 
 	t.Log(string(result))
 }
