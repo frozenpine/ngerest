@@ -49,7 +49,7 @@ func (t *NGETime) FromTimestamp(timestamp int64) {
 	sec := int64(timestamp / 1000)
 	nsec := (int64(timestamp) - sec*1000) * 1000
 	tm := time.Unix(sec, nsec)
-	*t = NGETime(tm)
+	*t = NGETime(tm.In(time.Local))
 }
 
 func (t *NGETime) String() string {
