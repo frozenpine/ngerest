@@ -4,5 +4,5 @@ package ngerest
 type Insurance struct {
 	Currency      string   `json:"currency"`
 	Timestamp     *NGETime `json:"timestamp"`
-	WalletBalance *float32 `json:"walletBalance,omitempty"`
+	WalletBalance float32  `json:"walletBalance,omitempty"`
 }
