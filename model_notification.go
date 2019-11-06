@@ -7,9 +7,9 @@ type Notification struct {
 	Title             string   `json:"title"`
 	Body              string   `json:"body"`
 	TTL               float32  `json:"ttl"`
-	Type              string   `json:"type,omitempty"`
-	Closable          bool     `json:"closable,omitempty"`
-	Persist           bool     `json:"persist,omitempty"`
-	WaitForVisibility bool     `json:"waitForVisibility,omitempty"`
-	Sound             string   `json:"sound,omitempty"`
+	Type              *string  `json:"type,omitempty"`
+	Closable          *bool    `json:"closable,omitempty"`
+	Persist           *bool    `json:"persist,omitempty"`
+	WaitForVisibility *bool    `json:"waitForVisibility,omitempty"`
+	Sound             *string  `json:"sound,omitempty"`
 }

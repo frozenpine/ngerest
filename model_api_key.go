@@ -6,9 +6,9 @@ type APIKeyInfo struct {
 	Secret      string   `json:"secret"`
 	Name        string   `json:"name"`
 	Nonce       float32  `json:"nonce"`
-	Cidr        string   `json:"cidr,omitempty"`
+	Cidr        *string  `json:"cidr,omitempty"`
 	Permissions []XAny   `json:"permissions,omitempty"`
-	Enabled     bool     `json:"enabled,omitempty"`
+	Enabled     *bool    `json:"enabled,omitempty"`
 	UserID      float32  `json:"userId"`
 	Created     *NGETime `json:"created,omitempty"`
 }
