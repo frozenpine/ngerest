@@ -2504,7 +2504,7 @@ func (a *UserAPIService) UserRegister(ctx context.Context, user map[string]strin
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 
-		localVarReturnValue.Email = result["result"].(map[string]interface{})["email"].(string)
+		localVarReturnValue.Email = result["result"].(map[string]interface{})["email"].(*string)
 
 		return localVarReturnValue, localVarHTTPResponse, nil
 	}
